@@ -1,10 +1,10 @@
 <template>
-  <div class="p-2 flex flex-col gap-2">
+  <div class="p-2 flex flex-col gap-2 h-full overflow-y-auto">
     <template v-for="(item, index) in data" :key="index">
       <TheProject @updateItem="updateItem" @deleteItem="deleteItem" @runItem="runItem" :id="item.id"
         :item="item.item" />
     </template>
-    <div class="collapse bg-base-200">
+    <div class="collapse bg-base-200 flex-shrink-0">
       <input type="radio" name="data" />
       <div class="collapse-title text-xl font-medium">New Project</div>
       <div class="collapse-content overflow-hidden w-full">
@@ -31,6 +31,29 @@
               <button class="btn btn-ghost w-full flex-shrink" @click="add">Save</button>
               <button class="btn btn-primary w-full flex-shrink" @click="run">Deploy & Run</button>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="collapse bg-base-200 flex-shrink-0">
+      <input type="radio" name="data" />
+      <div class="collapse-title text-xl font-medium">Project Run Info</div>
+      <div class="collapse-content overflow-hidden w-full">
+        <div class="card bg-base-300 text-base-content w-full">
+          <div class="card-body text-left w-full">
+            Run Order
+            <label class="input input-ghost input-bordered h-auto p-2 px-3">
+              1 - Change Project status updated <br />
+              2 - Clear Project folder from server <br />
+              3 - Clone Project from Repo <br />
+              4 - Run project command <br />
+            </label>
+            Commands
+            <label class="input input-ghost input-bordered h-auto p-2 px-3">
+              $ rm -r --force ../{folder} <br />
+              $ git clone ${repo} ../${folder} <br />
+              $ cd ../${folder} && ${command} & <br />
+            </label>
           </div>
         </div>
       </div>

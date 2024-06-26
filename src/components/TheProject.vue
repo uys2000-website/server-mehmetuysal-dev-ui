@@ -1,5 +1,5 @@
 <template>
-  <div class="collapse bg-base-200">
+  <div class="collapse bg-base-200 flex-shrink-0">
     <input type="radio" name="data" />
     <div class="collapse-title text-xl font-medium">{{ item.name }}</div>
     <div class="collapse-content overflow-hidden w-full">
