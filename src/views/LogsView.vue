@@ -13,7 +13,7 @@
             <div class="collapse-content overflow-x-hidden !p-0 flex flex-col gap-1">
               <template v-for="(data, index) in log.data" :key="index">
                 <template v-if="data">
-                  <pre class="overflow-x-auto w-full">{{ JSON.stringify(data, null, 4) }} </pre>
+                  <pre class="overflow-x-auto w-full">{{ data }} </pre>
                 </template>
               </template>
             </div>
