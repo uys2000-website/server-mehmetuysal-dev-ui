@@ -8,7 +8,7 @@ import {
   type User,
 } from "firebase/auth";
 
-const auth = getAuth(app);
+export const auth = getAuth(app);
 
 export const signOut = function () {
   return _signOut(auth);

@@ -19,7 +19,7 @@ import {
   deleteDoc,
 } from "firebase/firestore";
 
-const db = getFirestore(app, "database");
+export const db = getFirestore(app);
 
 export const setDocument = function (
   col: string,

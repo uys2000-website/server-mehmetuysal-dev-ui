@@ -25,7 +25,7 @@ export default {
 
 .collapse-title::before {
   position: absolute;
-  top: 62px;
+  top: 65px;
   content: "";
   background-image: url("https://mehmetuysal.dev/logo.jpg");
   background-repeat: no-repeat;

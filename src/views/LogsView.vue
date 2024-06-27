@@ -27,7 +27,8 @@
 <script lang="ts">
 import type { Log } from '@/classes/logs';
 import { LOGS } from '@/constants';
-import { docsListener, getDocuments } from '@/services/firestore';
+import { auth } from '@/services/fireauth';
+import { db, docsListener, getDocuments } from '@/services/firestore';
 import type { Unsubscribe } from 'firebase/firestore';
 
 export default {

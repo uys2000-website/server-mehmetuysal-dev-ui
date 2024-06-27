@@ -38,7 +38,13 @@ export default {
   },
   methods: {
     submit() {
-      signIn(this.mail, this.pass)
+      let mail = this.mail
+      let pass = this.pass
+      if (import.meta.env.VITE_USE_AUTH == "FALSE") {
+        mail = "test@mehmetuysal.dev"
+        pass = "123456"
+      }
+      signIn(mail, pass)
         .then((result) => {
           const modal = this.$refs.modal as HTMLDialogElement;
           this.name = "Success";
@@ -51,6 +57,8 @@ export default {
           this.message = error.message;
           modal.showModal();
         });
+    },
+    mounted() {
     },
   }
 };

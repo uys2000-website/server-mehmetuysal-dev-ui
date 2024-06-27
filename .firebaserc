@@ -1,5 +1,10 @@
 {
   "projects": {
-    "default": "server-mehmetuysal-dev"
-  }
+    "default": "server-mehmetuysal-dev",
+    "dev": "server-mehmetuysal-dev-test",
+    "prod": "server-mehmetuysal-dev"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }
