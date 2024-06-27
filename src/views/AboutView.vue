@@ -1,5 +1,9 @@
 <template>
-  <section class="prose max-w-2xl m-auto bg-base-300 p-10 flex flex-col gap-4">
+  <section class="prose max-w-2xl m-auto bg-base-300 p-10 flex flex-col gap-4 overflow-hidden">
+    <div class="flex flex-nowrap gap-2">
+      <a class="btn btn-primary w-full flex-shrink" href="/login">Login</a>
+      <a class="btn btn-primary w-full flex-shrink" href="/home">Dashboard</a>
+    </div>
     <article class="collapse bg-base-200">
       <input type="radio" name="my-accordion-1" checked />
       <div class="collapse-title text-xl font-medium">Server-MehmetUysal-Dev-UI</div>

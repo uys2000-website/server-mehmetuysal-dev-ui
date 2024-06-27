@@ -1,5 +1,6 @@
 <template>
-  <div class="h-screen w-screen flex justify-center items-center">
+  <div class="h-screen flex flex-col justify-center items-center gap-4">
+    <a class="btn btn-primary w-full max-w-[288px]" href="/">Home</a>
     <form class="flex flex-col gap-2 p-4 shadow-2xl" method="post" @submit.prevent="submit">
       <div>Login</div>
       <label class="input input-bordered flex items-center gap-2">
