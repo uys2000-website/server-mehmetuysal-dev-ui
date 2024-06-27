@@ -10,7 +10,7 @@ export default {
   components: { RouterView },
   mounted() {
     authListener((user => {
-      if (user) setTimeout(() => !this.$route.path.startsWith("/home") ? this.$router.push("/home") : 0, 1000);
+      if (user) setTimeout(() => this.$route.path.startsWith("/login") ? this.$router.push("/home") : 0, 1000);
       else setTimeout(() => this.$route.path != "/" ? this.$router.push("/login") : 0, 100);
     }))
   },
