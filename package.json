@@ -4,12 +4,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite --host --port 8888 --mode dev",
-    "dev:prod": "vite --host --port 8888  --mode prod",
-    "preview": "vite preview",
-    "build": "vite build  --mode prod",
+    "serve": "vite",
+    "serve:dev": "vite --host --port 8888 --mode dev",
+    "serve:prod": "vite --host --port 8888  --mode prod",
+    "build": "vite build",
     "build:dev": "vite build  --mode dev",
-    "type-check": "vue-tsc --build --force"
+    "build:prod": "vite build  --mode prod"
   },
   "dependencies": {
     "firebase": "^10.12.2",
