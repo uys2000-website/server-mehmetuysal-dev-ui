@@ -12,8 +12,8 @@
 </template>
 
 <script lang="ts">
-import TheDrawer from "@/components/TheDrawer.vue";
-import TheHeader from "@/components/TheHeader.vue"
+import TheDrawer from "@/components/layout/TheDrawer.vue";
+import TheHeader from "@/components/layout/TheHeader.vue"
 export default {
   components: { TheHeader, TheDrawer, }
 }

@@ -1,47 +1,19 @@
 <template>
   <div class="p-2 flex flex-col gap-2 h-full overflow-y-auto lg:flex-row lg:flex-wrap">
     <template v-for="(item, index) in data" :key="index">
-      <TheScript @updateItem="updateItem" @deleteItem="deleteItem" @runItem="runItem" :id="item.id" :item="item.item" />
+      <DaisyAcordion name="item" :header="item.item.name" useBackgorund useHalfSize>
+        <ScriptFields v-model="item.item">
+          <div class="flex flex-row flex-nowrap overflow-hidden gap-2">
+            <button class="btn w-full max-w-md flex-shrink btn-warning" @click="() => updateItem(item)">Update</button>
+            <button class="btn w-full max-w-md flex-shrink btn-error" @click="() => deleteItem(item)">Delete</button>
+            <button class="btn w-full max-w-md flex-shrink btn-success" @click="() => runItem(item)">Run</button>
+          </div>
+        </ScriptFields>
+      </DaisyAcordion>
     </template>
-    <div class="collapse use-bg bg-base-200 flex-shrink-0 lg:w-[calc(50%-5px)]">
-      <input type="radio" name="data" />
-      <div class="collapse-title text-xl font-medium">New Script</div>
-      <div class="collapse-content overflow-hidden w-full">
-        <div class="card bg-base-300 text-base-content w-full">
-          <div class="card-body items-center text-center w-full">
-            <label class="input input-ghost input-bordered flex items-center gap-2 w-full min-w-0">
-              Name:
-              <input type="text" class="grow w-auto" placeholder="Reboot?" v-model="item.name" />
-            </label>
-            <textarea class="textarea textarea-ghost textarea-bordered w-full" placeholder="One Line Code"
-              v-model="item.script"></textarea>
-            <div class="w-full overflow-hidden flex flex-row justify-center flex-nowrap gap-2">
-              <button class="btn btn-ghost w-full flex-shrink" @click="add">Save</button>
-              <button class="btn btn-primary w-full flex-shrink" @click="run">Run</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="collapse use-bg bg-base-200 flex-shrink-0 lg:w-[calc(50%-5px)]">
-      <input type="radio" name="data" />
-      <div class="collapse-title text-xl font-medium">Script Run Info</div>
-      <div class="collapse-content overflow-hidden w-full">
-        <div class="card bg-base-300 text-base-content w-full">
-          <div class="card-body text-left w-full">
-            Run Order
-            <label class="input input-ghost input-bordered h-auto p-2 px-3">
-              1 - Change Script status runned <br />
-              2 - Run Script <br />
-            </label>
-            Commands
-            <label class="input input-ghost input-bordered h-auto p-2 px-3">
-              $ echo ${name} && ${script} & <br />
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
+    <DaisyAcordion name="item" header="Info" useBackgorund useHalfSize>
+      <ScriptInfo />
+    </DaisyAcordion>
   </div>
 </template>
 
@@ -50,9 +22,11 @@ import { STARTUP } from '@/constants';
 import { addDocument, deleteDocument, docsListener, getDocuments, updateDocument } from '@/services/firestore';
 import type { Unsubscribe } from 'firebase/firestore';
 import { Script } from '@/classes/scripts';
-import TheScript from '@/components/TheScript.vue';
+import DaisyAcordion from '@/components/daisy/DaisyAcordion.vue';
+import ScriptFields from '@/components/ScriptFields.vue';
+import ScriptInfo from '@/components/ScriptInfo.vue';
 export default {
-  components: { TheScript },
+  components: { DaisyAcordion, ScriptFields, ScriptInfo },
   data() {
     return {
       path: STARTUP,

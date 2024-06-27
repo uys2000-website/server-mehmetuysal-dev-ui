@@ -4,28 +4,22 @@
       <a class="btn btn-primary w-full flex-shrink" href="/login">Login</a>
       <a class="btn btn-primary w-full flex-shrink" href="/home">Dashboard</a>
     </div>
-    <article class="collapse bg-base-200">
-      <input type="radio" name="my-accordion-1" checked />
-      <div class="collapse-title text-xl font-medium">Server-MehmetUysal-Dev-UI</div>
-      <div class="collapse-content">
-        <markdown-content />
-      </div>
-    </article>
-    <article class="collapse bg-base-200">
-      <input type="radio" name="my-accordion-1" />
-      <div class="collapse-title text-xl font-medium">Server-MehmetUysal-Dev</div>
-      <div class="collapse-content">
-        <markdown-content2 />
-      </div>
-    </article>
+    <DaisyAcordion header="Server-MehmetUysal-Dev-UI" checked>
+      <markdown-content />
+    </DaisyAcordion>
+    <DaisyAcordion header="Server-MehmetUysal-Dev-UI">
+      <markdown-content2 />
+    </DaisyAcordion>
   </section>
 </template>
 
 <script lang="ts">
 import { VueComponent as readMe } from "../../README.md"
 import { VueComponent as readMeServer } from "../../README-SERVER.md"
+import DaisyAcordion from "@/components/daisy/DaisyAcordion.vue"
 export default {
   components: {
+    DaisyAcordion,
     MarkdownContent: readMe,
     MarkdownContent2: readMeServer,
   },

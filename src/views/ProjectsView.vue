@@ -1,65 +1,27 @@
 <template>
   <div class="p-2 flex flex-col gap-2 h-full overflow-y-auto lg:flex-row lg:flex-wrap">
     <template v-for="(item, index) in data" :key="index">
-      <TheProject @updateItem="updateItem" @deleteItem="deleteItem" @runItem="runItem" :id="item.id"
-        :item="item.item" />
+      <DaisyAcordion name="item" :header="item.item.name" useBackgorund useHalfSize>
+        <ProjectFields v-model="item.item">
+          <div class="flex flex-row flex-nowrap overflow-hidden gap-2">
+            <button class="btn w-full max-w-md flex-shrink btn-warning" @click="() => updateItem(item)">Update</button>
+            <button class="btn w-full max-w-md flex-shrink btn-error" @click="() => deleteItem(item)">Delete</button>
+            <button class="btn w-full max-w-md flex-shrink btn-success" @click="() => runItem(item)">Run</button>
+          </div>
+        </ProjectFields>
+      </DaisyAcordion>
     </template>
-    <div class="collapse use-bg bg-base-200 flex-shrink-0 lg:w-[calc(50%-5px)]">
-      <input type="radio" name="data" />
-      <div class="collapse-title text-xl font-medium">New Project</div>
-      <div class="collapse-content overflow-hidden w-full">
-        <div class="card bg-base-300 text-base-content w-full">
-          <div class="card-body items-center text-center w-full">
-            <label class="input input-ghost input-bordered flex items-center gap-2 w-full min-w-0">
-              Name:
-              <input type="text" class="grow w-auto" placeholder="project-mehmetuysal-dev?" v-model="item.name" />
-            </label>
-            <label class="input input-ghost input-bordered flex items-center gap-2 w-full min-w-0">
-              Repo:
-              <input type="text" class="grow w-auto"
-                placeholder="https://github.com/uys2000-website/server-mehmetuysal-dev?" v-model="item.repo" />
-            </label>
-            <label class="input input-ghost input-bordered flex items-center gap-2 w-full min-w-0">
-              Folder:
-              <input type="text" class="grow w-auto" placeholder="project-mehmetuysal-dev?" v-model="item.folder" />
-            </label>
-            <label class="input input-ghost input-bordered flex items-center gap-2 w-full min-w-0">
-              Run Command:
-              <input type="text" class="grow w-auto" placeholder="npm run serve?" v-model="item.command" />
-            </label>
-            <textarea class="textarea textarea-ghost textarea-bordered w-full" placeholder=".env values"
-              v-model="item.env"></textarea>
-            <div class="w-full overflow-hidden flex flex-row justify-center flex-nowrap gap-2">
-              <button class="btn btn-ghost w-full flex-shrink" @click="add">Save</button>
-              <button class="btn btn-primary w-full flex-shrink" @click="run">Deploy & Run</button>
-            </div>
-          </div>
+    <DaisyAcordion name="item" header="New Project" useBackgorund useHalfSize>
+      <ProjectFields v-model="item">
+        <div class="flex flex-row flex-nowrap overflow-hidden gap-2">
+          <button class="btn w-full max-w-md flex-shrink btn-warning" @click="add">Save</button>
+          <button class="btn w-full max-w-md flex-shrink btn-success" @click="run">Deploy</button>
         </div>
-      </div>
-    </div>
-    <div class="collapse use-bg bg-base-200 flex-shrink-0 lg:w-[calc(50%-5px)]">
-      <input type="radio" name="data" />
-      <div class="collapse-title text-xl font-medium">Project Run Info</div>
-      <div class="collapse-content overflow-hidden w-full">
-        <div class="card bg-base-300 text-base-content w-full">
-          <div class="card-body text-left w-full">
-            Run Order
-            <label class="input input-ghost input-bordered h-auto p-2 px-3">
-              1 - Change Project status updated <br />
-              2 - Clear Project folder from server <br />
-              3 - Clone Project from Repo <br />
-              4 - Run project command <br />
-            </label>
-            Commands
-            <label class="input input-ghost input-bordered h-auto p-2 px-3">
-              $ rm -r --force ../{folder} <br />
-              $ git clone ${repo} ../${folder} <br />
-              $ cd ../${folder} && ${command} & <br />
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
+      </ProjectFields>
+    </DaisyAcordion>
+    <DaisyAcordion name="item" header="Info" useBackgorund useHalfSize>
+      <ProjectInfo />
+    </DaisyAcordion>
   </div>
 </template>
 
@@ -68,9 +30,11 @@ import { PROJECTSETTINGS } from '@/constants';
 import { addDocument, deleteDocument, docsListener, getDocuments, updateDocument } from '@/services/firestore';
 import type { Unsubscribe } from 'firebase/firestore';
 import { ProjectSettings } from '@/classes/settings';
-import TheProject from '@/components/TheProject.vue';
+import ProjectInfo from '@/components/ProjectInfo.vue';
+import ProjectFields from '@/components/ProjectFields.vue';
+import DaisyAcordion from "@/components/daisy/DaisyAcordion.vue"
 export default {
-  components: { TheProject },
+  components: { ProjectInfo, ProjectFields, DaisyAcordion },
   data() {
     return {
       path: PROJECTSETTINGS,
