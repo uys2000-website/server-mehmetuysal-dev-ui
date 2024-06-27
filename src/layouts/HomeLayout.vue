@@ -1,7 +1,7 @@
 <template>
   <div class="drawer h-screen overflow-hidden flex flex-col flex-nowrap">
     <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
-    <div class="drawer-content overflow-hidden flex flex-col flex-nowrap">
+    <div class="drawer-content min-h-full overflow-hidden flex flex-col flex-nowrap">
       <!-- Navbar -->
       <TheHeader />
       <!-- Page content here -->

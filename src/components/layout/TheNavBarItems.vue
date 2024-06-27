@@ -24,15 +24,19 @@
       Logs
     </RouterLink>
   </li>
+  <li>
+    <ThemeButton />
+  </li>
   <li><a href="javascript:;" @click="signOut">Exit</a></li>
 </template>
 
 <script lang="ts">
 import { signOut } from '@/services/fireauth';
 import { RouterLink } from 'vue-router';
+import ThemeButton from "./ThemeButton.vue"
 
 export default {
-  components: { RouterLink },
+  components: { RouterLink, ThemeButton },
   methods: {
     signOut: function () {
       signOut();

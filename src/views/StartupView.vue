@@ -1,5 +1,5 @@
 <template>
-  <div class="p-2 flex flex-col gap-2 h-full overflow-y-auto lg:flex-row lg:flex-wrap">
+  <div class="p-2 flex flex-col gap-2 max-h-full overflow-y-auto lg:flex-row lg:flex-wrap">
     <template v-for="(item, index) in data" :key="index">
       <DaisyAcordion name="item" :header="item.item.name" useBackgorund useHalfSize>
         <ScriptFields v-model="item.item">
