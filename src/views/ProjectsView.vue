@@ -1,10 +1,10 @@
 <template>
-  <div class="p-2 flex flex-col gap-2 h-full overflow-y-auto">
+  <div class="p-2 flex flex-col gap-2 h-full overflow-y-auto lg:flex-row lg:flex-wrap">
     <template v-for="(item, index) in data" :key="index">
       <TheProject @updateItem="updateItem" @deleteItem="deleteItem" @runItem="runItem" :id="item.id"
         :item="item.item" />
     </template>
-    <div class="collapse bg-base-200 flex-shrink-0">
+    <div class="collapse bg-base-200 flex-shrink-0 lg:w-[calc(50%-5px)]">
       <input type="radio" name="data" />
       <div class="collapse-title text-xl font-medium">New Project</div>
       <div class="collapse-content overflow-hidden w-full">
@@ -37,7 +37,7 @@
         </div>
       </div>
     </div>
-    <div class="collapse bg-base-200 flex-shrink-0">
+    <div class="collapse bg-base-200 flex-shrink-0 lg:w-[calc(50%-5px)]">
       <input type="radio" name="data" />
       <div class="collapse-title text-xl font-medium">Project Run Info</div>
       <div class="collapse-content overflow-hidden w-full">

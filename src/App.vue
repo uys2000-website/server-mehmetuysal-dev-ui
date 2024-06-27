@@ -16,3 +16,28 @@ export default {
   },
 }
 </script>
+
+
+<style>
+.collapse-title {
+  position: relative;
+}
+
+.collapse-title::before {
+  position: absolute;
+  top: 62px;
+  content: "";
+  background-image: url("https://mehmetuysal.dev/logo.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: black;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  width: calc(100% - 2rem);
+  height: calc(100% - 80px);
+}
+</style>
