@@ -1,14 +1,14 @@
-# Server-MehmetUysal-Dev-UI
+# UI Project (This Project)
 
-This project serves as the ui of [server-mehmetuysak-dev](https://github.com/uys2000-website/server-mehmetuysal-dev) project.  
-This 2 projects connects each other via firebase firestore.  
-  
-[Live Demo](https://server-mehmetuysal-dev-test.web.app/login)
+This project serves as the ui of [server-mehmetuysal-dev](https://github.com/uys2000-website/server-mehmetuysal-dev) project.  
+These 2 projects connects each other via [Firebase Firestore](https://firebase.google.com/).  
+
+<a href="https://server-mehmetuysal-dev-test.web.app/login" target="_blank">Live Demo</a>  
+<a href="https://github.com/uys2000-website/server-mehmetuysal-dev-ui" target="_blank">Github Repo</a>
 
 ## Environment 
 
 Example .ENV File:
-
 ```properties
 VITE_USE_AUTH="<TRUE|FALSE>"
 VITE_API_KEY="<firebase-api-key>"

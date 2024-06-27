@@ -19,11 +19,11 @@ export default {
 
 
 <style>
-.collapse-title {
+.collapse-title.use-bg {
   position: relative;
 }
 
-.collapse-title::before {
+.collapse-title.use-bg::before {
   position: absolute;
   top: 65px;
   content: "";

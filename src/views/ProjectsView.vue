@@ -4,7 +4,7 @@
       <TheProject @updateItem="updateItem" @deleteItem="deleteItem" @runItem="runItem" :id="item.id"
         :item="item.item" />
     </template>
-    <div class="collapse bg-base-200 flex-shrink-0 lg:w-[calc(50%-5px)]">
+    <div class="collapse use-bg bg-base-200 flex-shrink-0 lg:w-[calc(50%-5px)]">
       <input type="radio" name="data" />
       <div class="collapse-title text-xl font-medium">New Project</div>
       <div class="collapse-content overflow-hidden w-full">
@@ -37,7 +37,7 @@
         </div>
       </div>
     </div>
-    <div class="collapse bg-base-200 flex-shrink-0 lg:w-[calc(50%-5px)]">
+    <div class="collapse use-bg bg-base-200 flex-shrink-0 lg:w-[calc(50%-5px)]">
       <input type="radio" name="data" />
       <div class="collapse-title text-xl font-medium">Project Run Info</div>
       <div class="collapse-content overflow-hidden w-full">
