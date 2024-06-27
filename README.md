@@ -1,33 +1,20 @@
-# server-mehmetuysal-dev-ui
+# Server-MehmetUysal-Dev-UI
 
-This template should help get you started developing with Vue 3 in Vite.
+This project serves as the ui of [server-mehmetuysak-dev](https://github.com/uys2000-website/server-mehmetuysal-dev) project.  
+This 2 projects connects each other via firebase firestore.  
+  
+[Live Demo](https://server-mehmetuysal-dev-test.web.app/login)
 
-## Recommended IDE Setup
+## Environment 
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Example .ENV File:
 
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
+```properties
+VITE_USE_AUTH="<TRUE|FALSE>"
+VITE_API_KEY="<firebase-api-key>"
+VITE_AUTH_DOMAIN="<firebase-auth-domain>"
+VITE_PROJECT_ID="<firebase-project-id>"
+VITE_STORAGE_BUCKET="<firebase-storage-bucket>"
+VITE_MESSAGEING_SENDER_ID="<firebase-messaging-sender-id>"
+VITE_APP_ID="<firebase-app-id>"
 ```
