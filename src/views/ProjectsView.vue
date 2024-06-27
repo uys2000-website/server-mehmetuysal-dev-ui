@@ -27,6 +27,8 @@
               Run Command:
               <input type="text" class="grow w-auto" placeholder="npm run serve?" v-model="item.command" />
             </label>
+            <textarea class="textarea textarea-ghost textarea-bordered w-full" placeholder=".env values"
+              v-model="item.env"></textarea>
             <div class="w-full overflow-hidden flex flex-row justify-center flex-nowrap gap-2">
               <button class="btn btn-ghost w-full flex-shrink" @click="add">Save</button>
               <button class="btn btn-primary w-full flex-shrink" @click="run">Deploy & Run</button>
@@ -73,7 +75,7 @@ export default {
     return {
       path: PROJECTSETTINGS,
       data: [] as Array<{ id: string, item: ProjectSettings }>,
-      item: new ProjectSettings("", "", "", "", false, Date.now()),
+      item: new ProjectSettings("", "", "", "", "", false, Date.now()),
       unsubscribe: undefined as undefined | Unsubscribe
     }
   },

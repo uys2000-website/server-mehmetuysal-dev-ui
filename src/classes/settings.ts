@@ -12,6 +12,7 @@ export class ProjectSettings {
   repo!: string;
   folder!: string;
   command!: string;
+  env!: string;
   outdated!: boolean;
   timestamp!: number;
   constructor(
@@ -19,6 +20,7 @@ export class ProjectSettings {
     repo: string,
     folder: string,
     command: string,
+    env: string,
     outdated: boolean,
     timestamp: number
   ) {
@@ -26,6 +28,7 @@ export class ProjectSettings {
     this.repo = repo;
     this.folder = folder;
     this.command = command;
+    this.env = env;
     this.outdated = outdated;
     this.timestamp = timestamp;
   }

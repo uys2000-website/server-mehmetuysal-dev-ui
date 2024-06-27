@@ -22,6 +22,8 @@
             Run Command:
             <input type="text" class="grow w-auto" placeholder="npm run serve?" v-model="item.command" />
           </label>
+          <textarea class="textarea textarea-ghost textarea-bordered w-full" placeholder=".env values"
+            v-model="item.env"></textarea>
           <div class="w-full overflow-hidden flex flex-row justify-center flex-nowrap gap-2">
             <button class="btn btn-warning w-full flex-shrink"
               @click="() => $emit('updateItem', { id: id, item })">Update</button>
