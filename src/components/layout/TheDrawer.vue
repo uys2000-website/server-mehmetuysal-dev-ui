@@ -7,7 +7,7 @@
           <div class="card h-40 bg-contain bg-no-repeat bg-center bg-black"
             style="background-image: url(https://mehmetuysal.dev/logo.jpg);">
             <div class="card-body flex flex-col justify-center">
-              <h2 class="card-title text-primary-content">mehmetuysal.dev</h2>
+              <h2 class="card-title text-gray-300">mehmetuysal.dev</h2>
             </div>
           </div>
         </a>
