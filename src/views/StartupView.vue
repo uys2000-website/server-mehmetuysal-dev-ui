@@ -11,6 +11,14 @@
         </ScriptFields>
       </DaisyAcordion>
     </template>
+    <DaisyAcordion name="item" header="New Script" useBackgorund useHalfSize>
+      <ScriptFields v-model="item">
+        <div class="flex flex-row flex-nowrap overflow-hidden gap-2">
+          <button class="btn w-full max-w-md flex-shrink btn-warning" @click="add">Save</button>
+          <button class="btn w-full max-w-md flex-shrink btn-success" @click="run">Deploy</button>
+        </div>
+      </ScriptFields>
+    </DaisyAcordion>
     <DaisyAcordion name="item" header="Info" useBackgorund useHalfSize>
       <ScriptInfo />
     </DaisyAcordion>
